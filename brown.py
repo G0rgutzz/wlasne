@@ -1,6 +1,8 @@
 import numpy as np
 import random
 import pylab
+# program tworzący pseudo ruchy Browna na podstawie funkcji trygonometrycznych i funkcji pseudolosowych
+
 n = int(input("Ile ruchów? "))
 x1 = y1 = 0
 x2 = y2 = 1
@@ -8,20 +10,20 @@ lx1 = [0]
 ly1 = [0]
 lx2 = [1]
 ly2 = [1]
-for i in range(0, n):
-    rad = float(random.randint(0, 360))*np.pi/180  # losowanie kąta
+for i in range(0, n): # pierwsza cząstka
+    rad = float(random.randint(0, 360))*np.pi/180  # losowanie wartości kąta
     x1 = round(x1+np.cos(rad), 3)
     lx1.append(x1)
     y1 = round(y1+np.sin(rad), 3)  # zapisywanie przesunięcia
     ly1.append(y1)
-for j in range(0, n):
-    rad = float(random.randint(0, 360))*np.pi/180  # losowanie kąta
+for j in range(0, n): # druga cząstka
+    rad = float(random.randint(0, 360))*np.pi/180  # losowanie wartości kąta
     x2 = round(x2+np.cos(rad), 3)
     lx2.append(x2)
     y2 = round(y2+np.sin(rad), 3)  # zapisywanie przesunięcia
     ly2.append(y2)
-s1 = round(np.fabs(np.sqrt((x1-0)**2+(y1-0)**2)), 3)
-s2 = round(np.fabs(np.sqrt((x2-1)**2+(y2-1)**2)), 3)
+s1 = round(np.fabs(np.sqrt((x1-0)**2+(y1-0)**2)), 3) # zapisuje wartość końcową przesunięcia
+s2 = round(np.fabs(np.sqrt((x2-1)**2+(y2-1)**2)), 3) # zapisuje wartość końcową przesunięcia
 # print("Końcowa wartość przesunięcia wynosi: ", s)
 xl1 = [0, x1]
 yl1 = [0, y1]

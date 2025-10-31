@@ -6,6 +6,7 @@ k = 0
 j = 0
 n = 0
 m = 0
+# definiowanie dziedziny od b do c
 b = int(input("podaj dolną granicę dziedziny: "))
 c = int(input("podaj górną granicę dziedziny: "))
 if b <= c:
@@ -14,7 +15,7 @@ else:
     x = range(c, b+1)
 i = int(input("podaj ilość współczynników: "))
 for j in range(i):
-    a = float(input("Podaj %s. współczynnik: " % (j+1)))
+    a = float(input("Podaj %s. współczynnik: " % (j+1))) # tworzenie konkretnych współczynników i nadawanie im wartości
     for k in x:
         funkcja.append(a*(pow(k, (i-j-1))))
     j = j+1
